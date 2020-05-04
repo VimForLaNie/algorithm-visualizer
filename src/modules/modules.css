@@ -1,0 +1,32 @@
+.Array-item{
+    text-align: center;
+    width: auto;
+    min-width: 5vw;
+    height: 5vw;
+    border: 1px solid black;
+    transition: background-color 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out;
+    -moz-transition: background-color 0.15s ease-in-out;
+    -ms-transition: background-color 0.15s ease-in-out;
+    -o-transition: background-color 0.15s ease-in-out;
+}
+  
+  .Array-ptr-item{
+    background-color: chartreuse;
+    text-align: center;
+    width: auto;
+    min-width: 5vw;
+    height: 5vw;
+    border: 1px solid black;
+    transition: background-color 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out;
+    -moz-transition: background-color 0.15s ease-in-out;
+    -ms-transition: background-color 0.15s ease-in-out;
+    -o-transition: background-color 0.15s ease-in-out;
+}
+  
+  .Array-box{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+  }
