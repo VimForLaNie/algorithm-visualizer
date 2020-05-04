@@ -10,7 +10,16 @@ class Array extends React.Component{
             ptr : this.props.ptr
         };
     }
-    addPtr = d => {
+    pushArr = e => {
+        var temp = this.state.arr;
+        temp.push(e);
+        this.setState({
+            arr : temp
+        });
+        console.log(this.state.arr);
+    }
+
+    movePtr = d => {
         if(this.state.ptr + d >= this.state.arr.length){
             this.setState({
                 ptr : ((this.state.ptr + d) - this.state.arr.length)
@@ -27,8 +36,13 @@ class Array extends React.Component{
             }); 
         }
     }
-    
+    MoveButton = props =>{
+        return(
+            <button onClick={() => this.movePtr(props.i)}>{props.text}</button>
+        );
+    }
     render(){
+        
         const renderArray = [];
         for (const [index, value] of this.props.arr.entries()) {
             if(this.state.ptr === index){
@@ -47,12 +61,12 @@ class Array extends React.Component{
             }
         }
         return(
-            <div>
-                <button onClick={() => this.addPtr(-1)}>-</button>
+            <div className="Array">
+                <this.MoveButton i={1} text="+++"/>
                 <div className="Array-box">
                     {renderArray}
                 </div>
-                <button onClick={() => this.addPtr(1)}>+</button>
+                <this.MoveButton i={-1} text="---"/>
             </div>
         );
     }

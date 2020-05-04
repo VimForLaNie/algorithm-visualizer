@@ -1,3 +1,8 @@
+.Array{
+  display: flex;
+  flex-direction: row;
+}
+
 .Array-item{
     text-align: center;
     width: auto;
