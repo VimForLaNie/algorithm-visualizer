@@ -37,7 +37,7 @@ class Array extends React.Component{
     }
     MoveButton = props =>{
         return(
-            <button onClick={() => this.movePtr(props.i)}>{props.text}</button>
+            <div onClick={() => this.movePtr(props.i)} className="Array-button">{props.text}</div>
         );
     }
     render(){
@@ -61,11 +61,11 @@ class Array extends React.Component{
         }
         return(
             <div className="Array">
-                <this.MoveButton i={1} text="+++" className="Array-button"/>
+                <this.MoveButton i={1} text="+++"/>
                 <div className="Array-box">
                     {renderArray}
                 </div>
-                <this.MoveButton i={-1} text="---" className="Array-button"/>
+                <this.MoveButton i={-1} text="---"/>
             </div>
         );
     }
