@@ -61,11 +61,11 @@ class Array extends React.Component{
         }
         return(
             <div className="Array">
-                <this.MoveButton i={1} text="+++"/>
+                <this.MoveButton i={1} text="+++" className="Array-button"/>
                 <div className="Array-box">
                     {renderArray}
                 </div>
-                <this.MoveButton i={-1} text="---"/>
+                <this.MoveButton i={-1} text="---" className="Array-button"/>
             </div>
         );
     }
