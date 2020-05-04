@@ -4,7 +4,6 @@ import './modules.css';
 class Array extends React.Component{
     constructor(props){
         super(props);
-        console.log("Call constructor");
         this.state={
             arr : this.props.arr,
             ptr : this.props.ptr
