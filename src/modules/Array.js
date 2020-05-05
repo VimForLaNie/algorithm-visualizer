@@ -5,28 +5,28 @@ class Array extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            arr : this.props.arr,
             ptr : this.props.ptr
         };
+        
     }
     pushArr = e => {
-        var temp = this.state.arr;
+        var temp = this.props.arr;
         temp.push(e);
         this.setState({
             arr : temp
         });
-        console.log(this.state.arr);
     }
 
     movePtr = d => {
-        if(this.state.ptr + d >= this.state.arr.length){
+        console.log(this.props.arr);
+        if(this.state.ptr + d >= this.props.arr.length){
             this.setState({
-                ptr : ((this.state.ptr + d) - this.state.arr.length)
+                ptr : ((this.state.ptr + d) - this.props.arr.length)
             });
         }
         else if(this.state.ptr + d < 0){
             this.setState({
-                ptr : (this.state.arr.length + d) 
+                ptr : (this.props.arr.length + d) 
             });
         }
         else{
