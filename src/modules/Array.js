@@ -35,11 +35,21 @@ class Array extends React.Component{
             }); 
         }
     }
+
     MoveButton = props =>{
         return(
             <div onClick={() => this.movePtr(props.i)} className="Array-button">{props.text}</div>
         );
     }
+
+    IndexBox = props => {
+        return(
+            <div className="Array-index">
+                {props.name} : {this.state.ptr}
+            </div>
+        );
+    }
+
     render(){
         const renderArray = [];
         for (const [index, value] of this.props.arr.entries()) {
@@ -65,6 +75,7 @@ class Array extends React.Component{
                     {renderArray}
                 </div>
                 <this.MoveButton i={-1} text="---"/>
+                <this.IndexBox name="Pointer"/>
             </div>
         );
     }
