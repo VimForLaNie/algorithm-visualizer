@@ -41,7 +41,6 @@ class Array extends React.Component{
         );
     }
     render(){
-        
         const renderArray = [];
         for (const [index, value] of this.props.arr.entries()) {
             if(this.state.ptr === index){
