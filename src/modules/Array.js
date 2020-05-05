@@ -4,21 +4,29 @@ import './modules.css';
 class Array extends React.Component{
     constructor(props){
         super(props);
-        console.log("Call constructor");
         this.state={
-            arr : this.props.arr,
             ptr : this.props.ptr
         };
+        
     }
-    addPtr = d => {
-        if(this.state.ptr + d >= this.state.arr.length){
+    pushArr = e => {
+        var temp = this.props.arr;
+        temp.push(e);
+        this.setState({
+            arr : temp
+        });
+    }
+
+    movePtr = d => {
+        console.log(this.props.arr);
+        if(this.state.ptr + d >= this.props.arr.length){
             this.setState({
-                ptr : ((this.state.ptr + d) - this.state.arr.length)
+                ptr : ((this.state.ptr + d) - this.props.arr.length)
             });
         }
         else if(this.state.ptr + d < 0){
             this.setState({
-                ptr : (this.state.arr.length + d) 
+                ptr : (this.props.arr.length + d) 
             });
         }
         else{
@@ -27,7 +35,11 @@ class Array extends React.Component{
             }); 
         }
     }
-    
+    MoveButton = props =>{
+        return(
+            <div onClick={() => this.movePtr(props.i)} className="Array-button">{props.text}</div>
+        );
+    }
     render(){
         const renderArray = [];
         for (const [index, value] of this.props.arr.entries()) {
@@ -47,12 +59,12 @@ class Array extends React.Component{
             }
         }
         return(
-            <div>
-                <button onClick={() => this.addPtr(-1)}>-</button>
+            <div className="Array">
+                <this.MoveButton i={1} text="+++"/>
                 <div className="Array-box">
                     {renderArray}
                 </div>
-                <button onClick={() => this.addPtr(1)}>+</button>
+                <this.MoveButton i={-1} text="---"/>
             </div>
         );
     }
