@@ -1,66 +1,65 @@
 import React from 'react';
 import './modules.css';
 
-class Array extends React.Component{
-    constructor(props){
+class Array extends React.Component {
+    constructor(props) {
         super(props);
-        this.state={
-            ptr : this.props.ptr
+        this.state = {
+            ptr: this.props.ptr
         };
-        
     }
     pushArr = e => {
         var temp = this.props.arr;
         temp.push(e);
         this.setState({
-            arr : temp
+            arr: temp
         });
     }
 
     movePtr = d => {
         console.log(this.props.arr);
-        if(this.state.ptr + d >= this.props.arr.length){
+        if (this.state.ptr + d >= this.props.arr.length) {
             this.setState({
-                ptr : ((this.state.ptr + d) - this.props.arr.length)
+                ptr: ((this.state.ptr + d) - this.props.arr.length)
             });
         }
-        else if(this.state.ptr + d < 0){
+        else if (this.state.ptr + d < 0) {
             this.setState({
-                ptr : (this.props.arr.length + d) 
+                ptr: (this.props.arr.length + d)
             });
         }
-        else{
+        else {
             this.setState({
-                ptr : this.state.ptr + d //d
-            }); 
+                ptr: this.state.ptr + d //d
+            });
         }
     }
 
-    MoveButton = props =>{
-        return(
+    MoveButton = props => {
+        return (
             <div onClick={() => this.movePtr(props.i)} className="Array-button">{props.text}</div>
         );
     }
 
     IndexBox = props => {
-        return(
+        return (
             <div className="Array-index">
                 {props.name} : {this.state.ptr}
             </div>
         );
     }
 
-    render(){
+    render() {
         const renderArray = [];
         for (const [index, value] of this.props.arr.entries()) {
-            if(this.state.ptr === index){
+            if (this.state.ptr === index) {
                 renderArray.push(
                     <div className="Array-ptr-item" key={index}>
                         {value}
                     </div>
                 );
             }
-            else{
+            else {
                 renderArray.push(
                     <div className="Array-item" key={index}>
                         {value}
@@ -68,14 +67,14 @@ class Array extends React.Component{
                 );
             }
         }
-        return(
+        return (
             <div className="Array">
-                <this.MoveButton i={1} text="+++"/>
+                <this.MoveButton i={1} text="+++" />
                 <div className="Array-box">
                     {renderArray}
                 </div>
-                <this.MoveButton i={-1} text="---"/>
-                <this.IndexBox name="Pointer"/>
+                <this.MoveButton i={-1} text="---" />
+                <this.IndexBox name="Pointer" />
             </div>
         );
     }
