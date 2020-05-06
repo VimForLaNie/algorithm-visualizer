@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import Array from './modules/Array'
-import Test from './testAlgo'
-import Var from './modules/Var'
+import {Array, Var} from'./modules';
+// import Test from './testAlgo'
 
 var array = [5, 4, 3, 2, 1];
 
@@ -34,7 +33,7 @@ class App extends React.Component {
         <button onClick={() => {this.setState({ input2 : array })}}>switch 2</button>
         <Var name="First Pointer" value={this.state.ptr}/>
         <Var name="Second Pointer" value={this.state.ptr2}/>
-         <Test />
+         {/* <Test /> */}
       </div> 
     );
   }
