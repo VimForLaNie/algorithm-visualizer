@@ -6,6 +6,7 @@ class Array extends React.Component {
         super(props);
         console.log("constructing array . .. .");
         this.state = {
+            ptr2 : this.props.ptr2,
             ptr: this.props.ptr
         };
     }
@@ -51,7 +52,8 @@ class Array extends React.Component {
 
     static getDerivedStateFromProps(props) {
         return{
-            ptr : props.ptr
+            ptr : props.ptr,
+            ptr2 : props.ptr2
         }
     }
 
@@ -61,6 +63,13 @@ class Array extends React.Component {
             if (this.state.ptr === index) {
                 renderArray.push(
                     <div className="Array-ptr-item" key={index}>
+                        {value}
+                    </div>
+                );
+            }
+            else if (this.state.ptr2 === index) {
+                renderArray.push(
+                    <div className="Array-ptr2-item" key={index}>
                         {value}
                     </div>
                 );
