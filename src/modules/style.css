@@ -1,9 +1,9 @@
-.Array{
-  display: flex;
-  flex-direction: row;
+.Array {
+    display: flex;
+    flex-direction: row;
 }
 
-.Array-item{
+.Array-item {
     font-size: 3vw;
     display: flex;
     flex-direction: column;
@@ -14,15 +14,15 @@
     height: 5vw;
     margin: 4px;
     border: 1px solid black;
-    transition: background-color 0.15s ease-in-out, transform 0.3s ease-in; 
+    transition: background-color 0.15s ease-in-out, transform 0.3s ease-in;
     -webkit-transition: background-color 0.15s ease-in-out, transform 0.3s ease-in;
     -moz-transition: background-color 0.15s ease-in-out, transform 0.3s ease-in;
     -ms-transition: background-color 0.15s ease-in-out, transform 0.3s ease-in;
     -o-transition: background-color 0.15s ease-in-out, transform 0.3s ease-in;
 }
-  
-  .Array-ptr-item{
-    transform: translate(0px,-6px );
+
+.Array-ptr-item {
+    transform: translate(0px, -6px);
     font-size: 3vw;
     margin: 2px;
     display: flex;
@@ -39,31 +39,31 @@
     -moz-transition: background-color 0.15s ease-in-out, transform 0.3s ease-in-out;
     -ms-transition: background-color 0.15s ease-in-out, transform 0.3s ease-in-out;
     -o-transition: background-color 0.15s ease-in-out, transform 0.3s ease-in-out;
-    -webkit-transform: translate(0px,-6px );
-    -moz-transform: translate(0px,-6px );
-    -ms-transform: translate(0px,-6px );
-    -o-transform: translate(0px,-6px );
+    -webkit-transform: translate(0px, -6px);
+    -moz-transform: translate(0px, -6px);
+    -ms-transform: translate(0px, -6px);
+    -o-transform: translate(0px, -6px);
 }
 
-.Array-button:hover{
-  transition: background-color 0.4s ease-in-out;
-  background-color: rgb(103, 145, 41);
-  -webkit-transition: background-color 0.4s ease-in-out;
-  -moz-transition: background-color 0.4s ease-in-out;
-  -ms-transition: background-color 0.4s ease-in-out;
-  -o-transition: background-color 0.4s ease-in-out;
+.Array-button:hover {
+    transition: background-color 0.4s ease-in-out;
+    background-color: rgb(103, 145, 41);
+    -webkit-transition: background-color 0.4s ease-in-out;
+    -moz-transition: background-color 0.4s ease-in-out;
+    -ms-transition: background-color 0.4s ease-in-out;
+    -o-transition: background-color 0.4s ease-in-out;
 }
 
-.Array-button{
-  border: 1px solid black;
-  display: block;
-  background-color: greenyellow;
-  width: 5vw;
-  height: 5vw;
+.Array-button {
+    border: 1px solid black;
+    display: block;
+    background-color: greenyellow;
+    width: 5vw;
+    height: 5vw;
 }
 
-.Array-box{
-  width: auto;
-  display: flex;
-  flex-direction: row;
+.Array-box {
+    width: auto;
+    display: flex;
+    flex-direction: row;
 }
