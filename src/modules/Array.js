@@ -4,10 +4,11 @@ import './style.css';
 class Array extends React.Component {
     constructor(props) {
         super(props);
+        console.log("constructing array . .. .");
         this.state = {
+            ptr2 : this.props.ptr2,
             ptr: this.props.ptr
         };
-
     }
     pushArr = e => {
         var temp = this.props.arr;
@@ -18,7 +19,6 @@ class Array extends React.Component {
     }
 
     movePtr = d => {
-        console.log(this.props.arr);
         if (this.state.ptr + d >= this.props.arr.length) {
             this.setState({
                 ptr: ((this.state.ptr + d) - this.props.arr.length)
@@ -50,12 +50,26 @@ class Array extends React.Component {
         );
     }
 
+    static getDerivedStateFromProps(props) {
+        return{
+            ptr : props.ptr,
+            ptr2 : props.ptr2
+        }
+    }
+
     render() {
         const renderArray = [];
         for (const [index, value] of this.props.arr.entries()) {
             if (this.state.ptr === index) {
                 renderArray.push(
                     <div className="Array-ptr-item" key={index}>
+                        {value}
+                    </div>
+                );
+            }
+            else if (this.state.ptr2 === index) {
+                renderArray.push(
+                    <div className="Array-ptr2-item" key={index}>
                         {value}
                     </div>
                 );
@@ -70,12 +84,9 @@ class Array extends React.Component {
         }
         return (
             <div className="Array">
-                <this.MoveButton i={1} text="+++" />
                 <div className="Array-box">
                     {renderArray}
                 </div>
-                <this.MoveButton i={-1} text="---" />
-                <this.IndexBox name="Pointer" />
             </div>
         );
     }
