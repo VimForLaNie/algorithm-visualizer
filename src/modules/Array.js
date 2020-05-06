@@ -4,6 +4,7 @@ import './modules.css';
 class Array extends React.Component {
     constructor(props) {
         super(props);
+        console.log("constructing array . .. .");
         this.state = {
             ptr: this.props.ptr
         };
@@ -17,7 +18,6 @@ class Array extends React.Component {
     }
 
     movePtr = d => {
-        console.log(this.props.arr);
         if (this.state.ptr + d >= this.props.arr.length) {
             this.setState({
                 ptr: ((this.state.ptr + d) - this.props.arr.length)
@@ -49,6 +49,12 @@ class Array extends React.Component {
         );
     }
 
+    static getDerivedStateFromProps(props) {
+        return{
+            ptr : props.ptr
+        }
+    }
+
     render() {
         const renderArray = [];
         for (const [index, value] of this.props.arr.entries()) {
@@ -69,12 +75,9 @@ class Array extends React.Component {
         }
         return (
             <div className="Array">
-                <this.MoveButton i={1} text="+++" />
                 <div className="Array-box">
                     {renderArray}
                 </div>
-                <this.MoveButton i={-1} text="---" />
-                <this.IndexBox name="Pointer" />
             </div>
         );
     }

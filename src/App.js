@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Array from './modules/Array'
+import Test from './testAlgo'
 
 var array = [5,4,3,2,1];
 
@@ -25,6 +26,7 @@ class App extends React.Component{
         <Array arr={this.state.input} ptr={0}/>
         <button onClick={() => {this.setState({ input : change(array) })}}>swap</button>
         <button onClick={() => {this.setState({ input : array })}}>switch</button>
+        <Test />
       </div> 
     );
   }
